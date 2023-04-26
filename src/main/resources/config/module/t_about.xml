@@ -206,7 +206,11 @@
 	<select id="about.selectOne"
 		parameterType="com.enterprise.entity.About"
 		resultType="com.enterprise.entity.About">
-		select * from t_about where 1=1 limit 0,1
+		select * from t_about where 1=1
+		<if test="id!=0">
+			and id=#{id}
+		</if>
+		limit 0,1
 	</select>
 	<select id="about.selectList" parameterType="com.enterprise.entity.About" resultType="com.enterprise.entity.About">
 		select * from t_about where 1=1

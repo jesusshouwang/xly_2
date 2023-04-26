@@ -220,7 +220,11 @@
 	<select id="systemSetting.selectOne"
 		parameterType="com.enterprise.entity.SystemSetting"
 		resultType="com.enterprise.entity.SystemSetting">
-		select * from t_systemsetting where 1=1 limit 0,1
+		select * from t_systemsetting where 1=1
+		<if test="id!=0">
+			and id=#{id}
+		</if>
+		limit 0,1
 	</select>
 	<select id="systemSetting.selectById" parameterType="int" resultType="com.enterprise.entity.SystemSetting">
 	 select * from t_systemsetting t where 1=1 and id=#{id}

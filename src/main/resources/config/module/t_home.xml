@@ -98,7 +98,11 @@
 	<select id="home.selectOne"
 		parameterType="com.enterprise.entity.Home"
 		resultType="com.enterprise.entity.Home">
-		select * from t_home where 1=1 limit 0,1
+		select * from t_home where 1=1
+		<if test="id!=0">
+			and id=#{id}
+		</if>
+		limit 0,1
 	</select>
 	<select id="home.selectList" parameterType="com.enterprise.entity.Home" resultType="com.enterprise.entity.Home">
 		select * from t_home where 1=1

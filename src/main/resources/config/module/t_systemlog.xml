@@ -100,7 +100,11 @@
 	<select id="systemlog.selectOne"
 		parameterType="com.enterprise.entity.Systemlog"
 		resultType="com.enterprise.entity.Systemlog">
-		select * from t_systemlog where 1=1 limit 0,1
+		select * from t_systemlog where 1=1
+		<if test="id!=0">
+			and id=#{id}
+		</if>
+		limit 0,1
 	</select>
 	<select id="systemlog.selectById" parameterType="string" resultType="com.enterprise.entity.Systemlog">
 	 select * from t_systemlog t where 1=1 and id=#{id}

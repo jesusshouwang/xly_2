@@ -62,7 +62,11 @@
 	<select id="homeFeatures.selectOne"
 		parameterType="com.enterprise.entity.HomeFeature"
 		resultType="com.enterprise.entity.HomeFeature">
-		select * from t_home_features where 1=1 limit 0,1
+		select * from t_home_features where 1=1
+		<if test="id!=0">
+			and id=#{id}
+		</if>
+		limit 0,1
 	</select>
 	<select id="homeFeatures.selectList" parameterType="com.enterprise.entity.HomeFeature" resultType="com.enterprise.entity.HomeFeature">
 		select * from t_home_features where 1=1
