@@ -33,23 +33,23 @@ public class AddressUtil {
 	}
 	
 	public static String getAddress(String content,String encodingStr) throws UnsupportedEncodingException{
-		String url = "http://ip.taobao.com/service/getIpInfo.php";
-		String returnStr = getResult(url, content, encodingStr);
-		if(returnStr != null){
-			String[] temp = returnStr.split(",");
-			if(temp.length<3){
-				return "0";//无效ip
-			}
-			String region = (temp[5].split(":"))[1].replaceAll("\"", "");
-			String city = (temp[7].split(":"))[1].replaceAll("\"", "");
-			String isp = (temp[11].split(":"))[1].replaceAll("\"", "");
-			region = decodeUnicode(region);// 省份
-			city = decodeUnicode(city);// 省份
-			isp = decodeUnicode(isp);// 省份
-			if (StringUtils.isNotBlank(region) && StringUtils.isNotBlank(city) && StringUtils.isNotBlank(isp)) {
-				return region + city + "[" + isp + "]";
-			}
-		}
+//		String url = "http://ip.taobao.com/service/getIpInfo.php";
+//		String returnStr = getResult(url, content, encodingStr);
+//		if(returnStr != null){
+//			String[] temp = returnStr.split(",");
+//			if(temp.length<3){
+//				return "0";//无效ip
+//			}
+//			String region = (temp[5].split(":"))[1].replaceAll("\"", "");
+//			String city = (temp[7].split(":"))[1].replaceAll("\"", "");
+//			String isp = (temp[11].split(":"))[1].replaceAll("\"", "");
+//			region = decodeUnicode(region);// 省份
+//			city = decodeUnicode(city);// 省份
+//			isp = decodeUnicode(isp);// 省份
+//			if (StringUtils.isNotBlank(region) && StringUtils.isNotBlank(city) && StringUtils.isNotBlank(isp)) {
+//				return region + city + "[" + isp + "]";
+//			}
+//		}
 		return "";
 	}
 	

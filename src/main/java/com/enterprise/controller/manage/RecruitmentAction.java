@@ -67,7 +67,7 @@ public class RecruitmentAction extends BaseController<Recruitment>{
 	@Override
 	public String update(HttpServletRequest request, @ModelAttribute("e") Recruitment e, RedirectAttributes flushAttrs) throws Exception {
 		recruitmentService.update(e);
-		insertAfter(e);
+//		insertAfter(e);
 		//加载招聘信息缓存
 		frontCache.loadRecruitments();
 		addMessage(flushAttrs, "操作成功！");

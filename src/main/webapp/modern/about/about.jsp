@@ -48,17 +48,17 @@
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><%=SystemManage.getInstance().getAbout().getClient()%></span>
-            <p>企业客户</p>
+            <p>客户总数</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><%=SystemManage.getInstance().getAbout().getProject()%></span>
-            <p>服务项目</p>
+            <p>服务类型</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><%=SystemManage.getInstance().getAbout().getHours()%></span>
-            <p>个人客户</p>
+            <p>服务时常</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
