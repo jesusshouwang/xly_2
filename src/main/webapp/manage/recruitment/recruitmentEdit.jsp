@@ -125,6 +125,7 @@
 		</div>
 	</form>
 <script type="text/javascript">
+	// var content;
 function selectList(obj){
 	// var tableId = $(obj).attr("table-id");
 	// var table;
@@ -137,6 +138,7 @@ function selectList(obj){
 	// 	table.ajax.reload();
 	// 	return false;
 	// }
+	editor.sync();
 	var _form = $("form");
 	_form.attr("action",$(obj).attr("method"));
 	_form.submit();
