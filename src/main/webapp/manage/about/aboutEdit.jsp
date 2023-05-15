@@ -139,6 +139,18 @@
             editor.html('');
         });
 
+        K('input[name=imageFile]').click(function() {
+            content.loadPlugin('image', function() {
+                content.plugin.imageDialog({
+                    imageUrl : K('#image').val(),
+                    clickFn : function(url) {
+                        K('#image').val(url);
+                        content.hideDialog();
+                    }
+                });
+            });
+        });
+
     });
     function commit(obj) {
         content.sync();
