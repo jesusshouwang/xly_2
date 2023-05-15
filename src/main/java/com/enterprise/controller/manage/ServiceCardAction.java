@@ -41,7 +41,8 @@ public class ServiceCardAction extends BaseController<ServiceCard>{
         serviceCardService.insert(entity);
         insertAfter(entity);
         addMessage(flushAttrs,"操作成功！");
-        frontCache.loadArticleCategroy();//加载缓存
+        frontCache.loadService();
+        frontCache.loadServiceCard();
         return "redirect:selectList";
     }
 
@@ -50,7 +51,9 @@ public class ServiceCardAction extends BaseController<ServiceCard>{
         serviceCardService.update(entity);
         insertAfter(entity);
         addMessage(flushAttrs, "操作成功！");
-        frontCache.loadArticleCategroy();//加载缓存
+//        frontCache.loadArticleCategroy();//加载缓存
+        frontCache.loadService();
+        frontCache.loadServiceCard();
         return "redirect:selectList";
     }
     @RequestMapping("delete")
@@ -58,7 +61,8 @@ public class ServiceCardAction extends BaseController<ServiceCard>{
         serviceCardService.delete(entity);
         insertAfter(entity);
         addMessage(flushAttrs, "操作成功！");
-        frontCache.loadArticleCategroy();//加载缓存
+        frontCache.loadService();
+        frontCache.loadServiceCard();
         return "redirect:selectList";
     }
 
